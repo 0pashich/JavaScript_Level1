@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        /* 3. Объявить две переменные a и b и задать им целочисленные произвольные начальные значения. 
+        Затем написать скрипт, который работает по следующему принципу: 
+        - если a и b положительные, вывести их разность (ноль можно считать положительным числом); 
+        - если а и b отрицательные, вывести их произведение; 
+        - * (этот пункт по сложнее, делайте по желанию) если а и b разных знаков, вывести их сумму; */
+
+        function getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        let a = Math.trunc(getRandomArbitrary(-100, 100));
+        let b = Math.trunc(getRandomArbitrary(-100, 100));
+
+        if (a >= 0 && b >= 0) {
+            //здесь в задании не очень понятно, выводить разность a b (a-b) или разность между a и b (из большего вычитаем меньшее). вывел разность между
+            alert("разность a и b " + ((a >= b) ? a - b : b - a));
+        } else if (a < 0 && b < 0) {
+            alert("произведение a и b " + (a * b));
+        } else if ((a < 0 && b >= 0) || (b < 0 && a >= 0)) {
+            alert("cумма a и b " + (a + b));
+        } else {
+            alert("что то пошло не так");
+        }
+
+    </script>
+</body>
+
+</html>
